@@ -2,11 +2,11 @@ package main._001_to_050._001_TwoSum;
 
 import java.util.Arrays;
 
-public class _001_TwoSum
+public class Main002
 {
 	public static void main(String[] args)
 	{
-		_001_TwoSum two_sum = new _001_TwoSum();
+		Main002 two_sum = new Main002();
 		Solution001 sol = new Solution001v1();
 		
 		TestCase[] test_cases = two_sum.getTestCases();
