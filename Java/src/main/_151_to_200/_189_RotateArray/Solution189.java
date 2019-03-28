@@ -1,0 +1,6 @@
+package main._151_to_200._189_RotateArray;
+
+public interface Solution189
+{
+  public void rotate(int[] nums, int k); 
+}
