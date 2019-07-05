@@ -9,8 +9,7 @@ public class Main401
     System.out.println("401. Binary Watch");
     
     String format = "\r\nInput: %d"
-                  + "\r\nReturn: %s"
-                  ;
+                  + "\r\nReturn: %s";
 
     Solution401 sol = new Solution401v5();
     for (int num : _testCases)
