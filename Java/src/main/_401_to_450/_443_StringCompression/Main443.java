@@ -1,17 +1,20 @@
 package main._401_to_450._443_StringCompression;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main443
 {
-  private HashMap<char[], TestCase> cases;
+  static List<TestCase443> cases = new ArrayList<TestCase443>(); 
   
   public static void main(String[] args)
   {
-    System.out.println("443 Strign Compression");
+    System.out.println("443 String Compression");
     
-    Solution443 sol = new Solution443v1();
 
+    init();
+    
+    
   }
   
   public static void init()
@@ -29,41 +32,19 @@ public class Main443
     };
     
     int[] ans = { 6, 1, 4 };
-      
     
+    int row_num = inputs.length;
+    for (int i=0; i<row_num; i++)
+    {
+      TestCase443 tc = new TestCase443(
+          inputs[i], outputs[i], ans[i]
+      );
+      
+      System.out.println();
+      System.out.println(tc.toString());
+      
+      Main443.cases.add(tc);
+    }
   }
   
 }
-
-class TestCase<T1, T2, T3>
-{
-  private T1 _Input  = null;
-  private T2 _Output = null;
-  private T3 _Answer = null;  
-  
-  public TestCase(T1 in, T2 out, T3 ans)
-  {
-    this._Input  = in;
-    this._Output = out;
-    this._Answer = ans;
-  }
-  
-  public T1 getInput()  { return this._Input;  }
-  public T2 getOutput() { return this._Output; }
-  public T3 getAnswer() { return this._Answer; }
-}
-
-
-  
-
-//["a","a","b","b","c","c","c"]
-//["a","2","b","2","c","3"]
-//6    
-//
-//["a"]
-//["a"]
-//1
-//  
-//["a","b","b","b","b","b","b","b","b","b","b","b","b"]
-//["a","b","1","2"]
-//4
