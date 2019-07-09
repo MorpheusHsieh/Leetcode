@@ -1,23 +1,34 @@
 package main._401_to_450._443_StringCompression;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main443
 {
-  static List<TestCase443> cases = new ArrayList<TestCase443>(); 
-  
   public static void main(String[] args)
   {
     System.out.println("443 String Compression");
     
-
-    init();
+    List<TestCase443> cases = new ArrayList<TestCase443>();
+    Solution443 sol = new Solution443v1();
+    
+    init(cases);
+    System.out.println(cases.toString());
+    
+    for (TestCase443 tc : cases)
+    {
+      char[] in = tc.getInput();
+      System.out.format("\r\nInput: %s", Arrays.toString(in));
+      
+      int res = sol.compress(in);
+      System.out.format("\r\nOutput: %d", res);
+    }
     
     
   }
   
-  public static void init()
+  public static void init(List<TestCase443> cases)
   {
     char[][] inputs = {
       {'a','a','b','b','c','c','c'}, 
@@ -40,10 +51,7 @@ public class Main443
           inputs[i], outputs[i], ans[i]
       );
       
-      System.out.println();
-      System.out.println(tc.toString());
-      
-      Main443.cases.add(tc);
+      cases.add(tc);
     }
   }
   

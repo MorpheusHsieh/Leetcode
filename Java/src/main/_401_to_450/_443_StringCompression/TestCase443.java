@@ -23,9 +23,11 @@ public class TestCase443
   {
     StringBuffer sb = new StringBuffer();
 
-    sb.append(" Input: "     + Arrays.toString(this.getInput()));
-    sb.append("\r\nOutput: " + Arrays.toString(this.getOutput()));
-    sb.append("\r\nAnswer: " + String.valueOf(this.getAnswer()));
+    sb.append("{");
+    sb.append("\r\n  Input: "     + Arrays.toString(this.getInput()));
+    sb.append(",\r\n  Output: " + Arrays.toString(this.getOutput()));
+    sb.append(",\r\n  Answer: " + String.valueOf(this.getAnswer()));
+    sb.append("\r\n}");
     return sb.toString();
   }
 }
