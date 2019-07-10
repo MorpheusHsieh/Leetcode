@@ -11,9 +11,10 @@ public class Main443
     System.out.println("443 String Compression");
     
     List<TestCase443> cases = new ArrayList<TestCase443>();
+    init(cases);
+
     Solution443 sol = new Solution443v1();
     
-    init(cases);
     System.out.println(cases.toString());
     
     for (TestCase443 tc : cases)
@@ -24,8 +25,7 @@ public class Main443
       int res = sol.compress(in);
       System.out.format("\r\nOutput: %d", res);
     }
-    
-    
+   
   }
   
   public static void init(List<TestCase443> cases)
