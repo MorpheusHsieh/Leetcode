@@ -33,16 +33,18 @@ public class Main443
     char[][] inputs = {
       {'a','a','b','b','c','c','c'}, 
       {'a'},
-      {'a','b','b','b','b','b','b','b','b','b','b','b','b'}
+      {'a','b','b','b','b','b','b','b','b','b','b','b','b'},
+      {'a','b','c','d','e','f','g'}
     };
     
     char[][] outputs = {
       {'a','2','b','2','c','3'}, 
       {'a'}, 
       {'a','b','1','2'},
+      {'a','1','b','1','c','1','d','1','e','1','f','1','g','1'}
     };
     
-    int[] ans = { 6, 1, 4 };
+    int[] ans = { 6, 1, 4, 14 };
     
     int row_num = inputs.length;
     for (int i=0; i<row_num; i++)
