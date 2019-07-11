@@ -19,9 +19,9 @@ public class Solution443v1 implements Solution443
           while (count > 0)
           {
             int digits = (int) (Math.log10(count));
-            int filter = (int) Math.pow(10, digits);
-            int num = count / filter;
-            count %= filter;
+            int divisor = (int) Math.pow(10, digits);
+            int num = count / divisor;
+            count %= divisor;
             chars[write++] = (char)(48 + num);
           }
         }
