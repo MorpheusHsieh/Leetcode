@@ -6,29 +6,30 @@ public class Solution443v1 implements Solution443
   {
     int len = chars.length;
 
-    StringBuffer sb = new StringBuffer();
-
-    int i = 0, j = 0;
-    while (j < len)
+    int read = -1, anchor = 0, write = 0;
+    while (++read < len)
     {
-      System.out.format("\r\ni: %d, j: %d, %c, %c", i, j, chars[i], chars[j]);
-      if (chars[j] == chars[i]) {
-        j++; continue;
-      }
+      if ((read+1 == len) || chars[read+1] != chars[read])
+      {
+        chars[write++] = chars[anchor];
 
-      sb.append(chars[i]);
-      sb.append(String.valueOf(j-i));  // number of chars[i]
-      i = j; 
+        if (read > anchor) 
+        {
+          int count = (read - anchor + 1);
+          while (count > 0)
+          {
+            int digits = (int) (Math.log10(count));
+            int filter = (int) Math.pow(10, digits);
+            int num = count / filter;
+            count %= filter;
+            chars[write++] = (char)(48 + num);
+          }
+        }
+        anchor = read + 1;
+      }
     }
     
-    sb.append(chars[i]);
-
-    int cnt = (i == (len - 1)) ? 1 : ((len-1) - i + 1);
-    sb.append(String.valueOf(cnt));
-    
-    System.out.println("\r\n"+sb.toString());
-    
-    return sb.length();
+    return write;
   }
   
 }

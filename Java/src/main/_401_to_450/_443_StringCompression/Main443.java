@@ -19,11 +19,12 @@ public class Main443
     
     for (TestCase443 tc : cases)
     {
-      char[] in = tc.getInput();
-      System.out.format("\r\nInput: %s", Arrays.toString(in));
+      char[] chars = tc.getInput();
+      System.out.format("\r\nInput: %s", Arrays.toString(chars));
       
-      int res = sol.compress(in);
-      System.out.format("\r\nOutput: %d", res);
+      int res = sol.compress(chars);
+      System.out.format("\r\nOutput: %s", Arrays.toString(chars));
+      System.out.format("\r\nAns: %d\r\n", res);
     }
    
   }
