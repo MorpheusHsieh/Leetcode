@@ -8,7 +8,7 @@ public class Main447
   {
     System.out.println("447.Number of Boomerangs");
     
-    Solution447 sol = new Solution447v3();
+    Solution447 sol = new Solution447v1();
     
     for (int[][] points : TestCases)
     {
