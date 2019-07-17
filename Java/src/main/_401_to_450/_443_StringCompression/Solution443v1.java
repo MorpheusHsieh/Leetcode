@@ -1,5 +1,10 @@
 package main._401_to_450._443_StringCompression;
 
+/*
+ * Runtime: 0 ms, faster than 100.00% of Java online submissions for String Compression.
+ * Memory Usage: 37.4 MB, less than 98.87% of Java online submissions for String Compression.
+ */
+
 public class Solution443v1 implements Solution443
 {
   public int compress(char[] chars)
@@ -16,14 +21,18 @@ public class Solution443v1 implements Solution443
         if (read > anchor) 
         {
           int count = (read - anchor + 1);
-          while (count > 0)
+//          System.out.println("\r\ncount: "+count);
+          
+          while (count > 9)
           {
             int digits = (int) (Math.log10(count));
             int divisor = (int) Math.pow(10, digits);
             int num = count / divisor;
+            chars[write++] = (char)(48+num);
+            
             count %= divisor;
-            chars[write++] = (char)(48 + num);
           }
+          chars[write++] = (char)(48+count);
         }
         anchor = read + 1;
       }
